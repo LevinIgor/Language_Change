@@ -1,27 +1,24 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import textEng from "@/JSON/text-eng.json";
-import textUa from "@/JSON/text-ua.json";
+import { ref, inject, watch, computed } from "vue";
 
-const props = defineProps(["lang"]);
+const lang = computed(async () => await inject("lang"));
 
-const text = computed(() => {
-  return contentLang.value;
-});
+// const data = computed(async () => {
+//   console.log("lang", lang.value);
+//   return await import(`./JSON/${lang.value}.json`);
+// });
 
-const contentLang = computed(() => {
-  return props.lang === "ENG" ? textEng : textUa;
-});
+console.log(await lang.value);
 </script>
 <template>
   <main>
     <article>
-      <transition-group name="move" mode="out-in">
-        <section v-for="section in text" :key="section.title">
+      <!-- <transition-group name="move" mode="out-in">
+        <section v-for="section in data" :key="section.title">
           <h1>{{ section.title }}</h1>
           <p>{{ section.text }}</p>
         </section>
-      </transition-group>
+      </transition-group> -->
     </article>
   </main>
 </template>
@@ -31,9 +28,11 @@ main {
   display: flex;
   justify-content: center;
   padding: 3rem;
+  margin-top: 50px;
 }
 article {
   max-width: 800px;
+  user-select: none;
 }
 section {
   margin-bottom: 3rem;
@@ -52,10 +51,10 @@ h1 {
 .move-enter-from,
 .move-leave-to {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateZ(100%);
 }
 .move-leave-active {
-  position: absolute;
+  position: fixed;
 }
 
 @media (max-width: 500px) {

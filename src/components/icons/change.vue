@@ -14,6 +14,6 @@
 </template>
 <style>
 path {
-  fill: #fff;
+  fill: var(--text-color);
 }
 </style>

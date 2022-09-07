@@ -3,3 +3,17 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+:root {
+  --header-background-color: #fff;
+  --background-color: #ffffff3a;
+  --text-color: rgb(33, 33, 33);
+
+  --header-height: 50px;
+}
+
+.dark {
+  --header-background-color: #000000;
+  --background-color: #1e1e1e;
+  --text-color: #fff;
+}
