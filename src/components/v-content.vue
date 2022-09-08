@@ -1,24 +1,31 @@
 <script setup lang="ts">
-import { ref, inject, watch, computed } from "vue";
+import { ref, watch, onMounted } from "vue";
 
-const lang = computed(async () => await inject("lang"));
+const props = defineProps(["lang"]);
+const data = ref({ title: {}, body: { content: [{ title: "", text: "" }] } });
 
-// const data = computed(async () => {
-//   console.log("lang", lang.value);
-//   return await import(`./JSON/${lang.value}.json`);
-// });
+async function getData() {
+  data.value = await import(`@/JSON/${props.lang}.json`);
+}
 
-console.log(await lang.value);
+watch(
+  () => props.lang,
+  () => getData()
+);
+
+onMounted(async () => {
+  getData();
+});
 </script>
 <template>
   <main>
     <article>
-      <!-- <transition-group name="move" mode="out-in">
-        <section v-for="section in data" :key="section.title">
+      <transition-group name="move" mode="out-in">
+        <section v-for="section in data.body?.content" :key="section.title">
           <h1>{{ section.title }}</h1>
           <p>{{ section.text }}</p>
         </section>
-      </transition-group> -->
+      </transition-group>
     </article>
   </main>
 </template>
@@ -38,23 +45,23 @@ section {
   margin-bottom: 3rem;
 }
 h1 {
-  font-size: 19px;
   font-weight: bold;
   margin-bottom: 5px;
+  font-size: clamp(16px, 4vw, 24px);
 }
-.move-move, /* apply transition to moving elements */
+p {
+  font-size: clamp(12px, 2vw, 18px);
+}
+.move-move,
 .move-enter-active,
 .move-leave-active {
-  transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 0.5s;
 }
 
 .move-enter-from,
 .move-leave-to {
   opacity: 0;
-  transform: translateZ(100%);
-}
-.move-leave-active {
-  position: fixed;
+  transform: translateY(50%);
 }
 
 @media (max-width: 500px) {

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "language": "Zmień język",
+    "theme": "Motyw"
+  },
+  "body": {
+    "content": [
+      {
+        "id": "0",
+        "title": "Sekcja 1",
+        "text": "Języki europejskie należą do tej samej rodziny. Ich oddzielne istnienie to mit. W przypadku nauki, muzyki, sportu itp. Europa używa tego samego słownictwa. Języki różnią się tylko gramatyką, wymową i najczęściej używanymi słowami. Każdy zdaje sobie sprawę, dlaczego nowy wspólny język byłby pożądany: można odmówić płacenia drogim tłumaczom. Aby to osiągnąć, konieczne byłoby posiadanie jednolitej gramatyki, wymowy i częstszych słów. Jeśli kilka języków łączy się, gramatyka powstałego języka jest prostsza i bardziej regularna niż gramatyka poszczególnych języków. Nowy wspólny język będzie więcej"
+      },
+      {
+        "id": "1",
+        "title": "Sekcja 2",
+        "text": "To będzie tak proste, jak zachodnie; w rzeczywistości będzie to Zachód. Anglikowi będzie się to wydawać uproszczonym angielskim, ponieważ mój sceptyczny przyjaciel z Cambridge powiedział mi, czym jest Zachód. Języki europejskie należą do tej samej rodziny. Ich oddzielne istnienie to mit. W przypadku nauki, muzyki, sportu itp. Europa używa tego samego słownictwa. Języki różnią się tylko gramatyką, wymową i najczęściej używanymi słowami. Każdy zdaje sobie sprawę, dlaczego nowy wspólny język byłby pożądany: można odmówić płacenia drogim tłumaczom"
+      },
+      {
+        "id": "2",
+        "title": "Sekcja 3",
+        "text": "Aby to osiągnąć, konieczna byłaby jednolita gramatyka, wymowa i bardziej popularne słowa. Jeśli kilka języków łączy się, gramatyka powstałego języka jest prostsza i bardziej regularna niż gramatyka poszczególnych języków. Nowy wspólny język będzie prostszy i bardziej regularny niż istniejące języki europejskie. To będzie tak proste, jak zachodnie; w rzeczywistości będzie to Zachód. Anglikowi będzie się to wydawać uproszczonym angielskim, ponieważ mój sceptyczny przyjaciel z Cambridge powiedział mi, czym jest Zachód. Języki europejskie należą do tej samej rodziny."
+      },
+      {
+        "id": "3",
+        "title": "Sekcja 4",
+        "text": "Ich oddzielne istnienie to mit. W przypadku nauki, muzyki, sportu itp. Europa używa tego samego słownictwa. Języki różnią się tylko gramatyką, wymową i najczęściej używanymi słowami. Każdy zdaje sobie sprawę, dlaczego nowy wspólny język byłby pożądany: można odmówić płacenia drogim tłumaczom. Aby to osiągnąć, konieczne byłoby posiadanie jednolitej gramatyki, wymowy i częstszych słów. Jeśli kilka języków łączy się, gramatyka powstałego języka jest prostsza i bardziej regularna niż gramatyka poszczególnych języków. Nowy wspólny język będzie prostszy i bardziej regularny niż istniejące języki europejskie."
+      }
+    ]
+  }
+}

@@ -5,9 +5,11 @@
 }
 
 :root {
-  --header-background-color: #fff;
+  --header-background-color: rgb(242, 242, 242);
   --background-color: #ffffff3a;
   --text-color: rgb(33, 33, 33);
+  --second-text-color: rgba(33, 33, 33, 0.66);
+  --border-color: #0000001a;
 
   --header-height: 50px;
 }
@@ -15,5 +17,7 @@
 .dark {
   --header-background-color: #000000;
   --background-color: #1e1e1e;
-  --text-color: #fff;
+  --text-color: rgba(255, 255, 255, 0.961);
+  --second-text-color: rgba(255, 255, 255, 0.532);
+  --border-color: #9aff8f49;
 }

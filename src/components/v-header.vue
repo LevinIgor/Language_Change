@@ -1,33 +1,36 @@
 <script setup lang="ts">
-import Change from "./icons/change.vue";
-import Theme from "./icons/theme.vue";
+import ThemeIcon from "./icons/theme.vue";
 import VSelect from "./v-select.vue";
-import Language from "./icons/language.vue";
-const emits = defineEmits(["changeLang"]);
-const props = defineProps(["lang"]);
+import { ref } from "vue";
 
-function nextLang() {
-  props.lang === "ENG"
-    ? emits("changeLang", { target: { value: "UA" } })
-    : emits("changeLang", { target: { value: "ENG" } });
-}
+const emits = defineEmits(["changeLang"]);
+const header = ref({ language: "Change language", theme: "Theme" });
+
 function changeTheme() {
   document.body.classList.toggle("dark");
+}
+async function changeLang(lang: any) {
+  header.value = await import(`@/JSON/${lang.value}.json`).then(
+    (res) => res.default.header
+  );
+  emits("changeLang", lang);
 }
 </script>
 <template>
   <header>
-    <VSelect />
-    <select :value="props.lang" @change="emits('changeLang', $event)">
-      <option value="UA">Українська</option>
-      <option value="ENG">English</option>
-    </select>
-    <Change class="icon rotate" @click="nextLang()" />
-    <Theme class="icon" @click="changeTheme()" />
+    <section>
+      <label>{{ header.language }}</label>
+      <VSelect @change="changeLang($event)" />
+    </section>
+    <section>
+      <label>{{ header.theme }}</label>
+      <ThemeIcon class="icon" @click="changeTheme()" />
+    </section>
   </header>
 </template>
 <style scoped>
 header {
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
@@ -36,10 +39,23 @@ header {
   background-color: var(--header-background-color);
   color: var(--text-color);
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   z-index: 100;
   transition: color 0.6s ease, background-color 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+section {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  font-size: clamp(10px, 2vw, 14px);
+  padding: 5px;
+}
+section label {
+  margin-right: 10px;
+  color: var(--second-text-color);
+  user-select: none;
 }
 svg {
   fill: var(--text-color);
@@ -48,10 +64,9 @@ select {
   padding: 5px 10px;
 }
 .icon {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  margin-left: 20px;
   transition: all 0.5s;
 }
 .rotate:hover {
