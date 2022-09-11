@@ -55,13 +55,12 @@ p {
 .move-move,
 .move-enter-active,
 .move-leave-active {
-  transition: all 0.5s;
+  transition: all 0.1s;
 }
 
 .move-enter-from,
 .move-leave-to {
   opacity: 0;
-  transform: translateY(50%);
 }
 
 @media (max-width: 500px) {
